@@ -274,3 +274,45 @@ val foo: String =
     else baz
 ```
 
+Comments
+--------
+
+It is not manditory to comment every section of code written. People often forget that when writing
+comments, they commit to maintaining not only their code but also their documentation. Comments that
+are out-of-date with their corresponding code are potentially dangerous.
+
+Methods such as `size()` on a collection don't need comments, as their purpose is immediately apparent
+to the user. Adding a commment only adds noise.
+
+### API documentation
+
+When documenting a class, function, or property to be used by others
+[KDoc style](https://kotlinlang.org/docs/reference/kotlin-doc.html) should be used.
+```kotlin
+/**
+ * Calculates bounding box that contains both provided [Rect]s
+ */
+fun getEnclosingBounds(first: Rect, second: Rect): Rect
+```
+It is not necessary to provide `@param`,`@return` tags, as they often result in needless duplication.
+
+### Inline documentation
+
+Comments intended to aid someone who is reading code should use C++ style `// comments`. For formatting
+purposes there should be a space between the slashes and the content.
+```kotlin
+// This is a helpful one line comment.
+```
+
+### TODO commments
+
+`TODO` Comments should either be in the format of
+```kotlin
+// TODO Some task that needs to be done.
+```
+or make use of Kotlin's [TODO()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html)
+function
+```kotlin
+TODO("Some task that needs to be done.")
+```
+
