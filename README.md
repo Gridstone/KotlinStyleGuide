@@ -308,7 +308,7 @@ When documenting a class, function, or property to be used by others
  */
 fun getEnclosingBounds(first: Rect, second: Rect): Rect
 ```
-It is not necessary to provide `@param`,`@return` tags, as they often result in needless duplication.
+It is often not necessary to provide `@param`,`@return` tags, as they can result in needless duplication.
 
 ### Inline documentation
 
