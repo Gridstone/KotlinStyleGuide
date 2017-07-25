@@ -133,7 +133,21 @@ interface Foo<out T : Any> : Bar {
 ```
 
 ### Blank lines
+
 Lines that are intentionally blank for formatting purposes should contain no characters at all.
+
+### Imports
+
+Always use explicit imports. Never use wildcard imports.
+```kotlin
+// OK
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+
+// Not OK
+import android.view.*
+```
 
 Type Inference
 --------------
