@@ -135,6 +135,7 @@ interface Foo<out T : Any> : Bar {
 ### Blank lines
 
 Lines that are intentionally blank for formatting purposes should contain no characters at all.
+Never use more than one blank line in a row.
 
 ### Imports
 
