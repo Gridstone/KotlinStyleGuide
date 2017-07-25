@@ -330,3 +330,25 @@ function
 TODO("Some task that needs to be done.")
 ```
 
+Function Declarations
+---------------------
+
+Many of the assertions below are based on
+[John Carmarck's thoughts](http://number-none.com/blow/john_carmack_on_inlined_code.html).
+
+### Length
+
+If a function has explicit inputs, outputs, and doesn't modify external state then don't be afraid of
+its length. These are the easiest functions to test and often a long section of linear processing is
+neater than declaring many "helper" functions that are only used once.
+
+### Avoid helper functions
+
+If a function is only ever called by one other function, that function should most likely become a
+[local function](https://kotlinlang.org/docs/reference/functions.html#local-functions).
+
+If a function is only ever called in one place consider inlining it. This doesn't mean appending
+Kotlin's `inline` keyword but rather refers to taking the contents of the method and replacing them
+where the function was originally invoked. If that section of code could later be used as a funcion
+in many places then consider pulling it out again, but only when necessary.
+
