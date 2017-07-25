@@ -192,9 +192,51 @@ fun foo(bar: Int) {
 
 // Not OK
 fun foo(bar :Int) {
-  if (bar > ) {
+  if (bar >= 3) {
     // Do other stuff.
   }
 }
+```
+
+### `If` statements
+
+Short `if` statements may be declared on a single line.
+```kotlin
+fun foo(bar: Bar) {
+  if (bar.qualifiesForThing()) bar.doThing()
+  else bar.doSomethingElse()
+}
+```
+
+However if either the `if` or the `else` section take up mutiple lines then both must make use of
+curly braces.
+```kotlin
+// OK
+fun foo(bar: Bar): Int {
+  if (bar.qualifiesForThing()) {
+    val baz = bar.getThing()
+    return baz.calcSomeInt()
+  } else {
+    return 3
+  }
+}
+// Not OK
+fun foo(bar: Bar): Int {
+  if (bar.qualifiesForThing()) {
+    val baz = bar.getThing()
+    return baz.calcSomeInt()
+  } else return 3
+}
+```
+
+If a variable is set as the result of an `if` statement then prefer the formatting:
+```kotlin
+val foo: String = if (something()) bar else baz
+```
+If the condition is long then prefer:
+```kotlin
+val foo: String =
+    if (someCalculationThatIsLong() > someOtherLongCalculation()) bar
+    else baz
 ```
 
