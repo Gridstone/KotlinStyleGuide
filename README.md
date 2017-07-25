@@ -175,6 +175,26 @@ Unused lambda parameters should be replaced with an underscore.
 foo { _, _, bar -> println(bar) }
 ```
 
+### Return statements
+
+Return values inside of lambdas have the potential to be confusing to readers. If a lambda returns a
+value and has more than one line then a return tag must be explicitly provided.
+```kotlin
+// OK
+list.filter { it > 3 }
+    .map {
+      val x = it * 4
+      return@map x + 7
+    }
+
+// Not OK
+list.filter { it > 3 }
+    .map {
+      val x = it * 4
+      x + 7
+    }
+```
+
 Control Flow
 ------------
 
