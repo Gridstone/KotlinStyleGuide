@@ -269,6 +269,7 @@ fun foo(bar: Bar): Int {
     return 3
   }
 }
+
 // Not OK
 fun foo(bar: Bar): Int {
   if (bar.qualifiesForThing()) {
