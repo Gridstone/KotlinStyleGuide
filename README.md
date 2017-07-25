@@ -26,6 +26,20 @@ class Foo {
 enum Bar { FIRST_BAR, SECOND_BAR }
 ```
 
+### Hungarian notation
+
+Do not use [Hungarian notation](http://jakewharton.com/just-say-no-to-hungarian-notation/).
+
+### Acronyms
+
+When naming things, treat acroyms as full words.
+```kotlin
+// OK
+val request = XmlHttpRequest()
+// Not OK
+val request = XMLHTTPRequest()
+```
+
 Formatting
 ----------
 
