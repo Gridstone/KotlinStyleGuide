@@ -9,8 +9,8 @@ Naming
 - Variable names are `camelCase`
 - Type names are `CaptialCamelCase`
 - Function names are `camelCase`
-- Constants are `CAPITAL_SNAKE_CASE`
-- Enum entries are `CAPITAL_SNAKE_CASE`
+- Constants are `SCREAMING_SNAKE_CASE`
+- Enum entries are `SCREAMING_SNAKE_CASE`
 
 ```kotlin
 const val GREETING = "Hello, world!"
