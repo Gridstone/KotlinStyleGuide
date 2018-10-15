@@ -91,6 +91,22 @@ fun foo(bar1, bar2
 
 - Alignment is especially useful for data classes which may have many properties
 
+It is __not__ permissible to have parameters with multiline parameters:
+```kotlin
+val foo = Foo(Bar1(baz1, baz2),
+              Bar2(longArgumentName1,
+                   longArgumentName2),
+              bar3)
+```
+
+Instead, declare the parameter prior:
+```kotlin
+val bar2 = Bar2(longArgumentName1, longArgumentName2)
+val foo = Foo(Bar1(baz1, baz2),
+              bar2,
+              bar3)
+```
+
 ### Aligning invocations
 
 When methods are invoked in a chain they must be aligned.
